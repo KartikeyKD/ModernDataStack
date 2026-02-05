@@ -9,7 +9,7 @@ function InfrastructureConsole(props) {
     props.setColor3("#12262e");
     props.setColor4("#12262e");
     props.setColor5("#23434f");
-  }, []);
+  }, [props]);
 
   return (
     <div>

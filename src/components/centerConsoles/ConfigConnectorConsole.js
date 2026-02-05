@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import RightActionPane from "../elements/RightActionPane";
-import SearchOption from "../elements/SearchOption";
 import { useNavigate } from "react-router-dom";
 
 function ConfigConnectorConsole(props) {
@@ -9,7 +8,7 @@ function ConfigConnectorConsole(props) {
   const [dbType, setType] = useState("");
 
   const [element, setElement] = useState("");
-  let history = useNavigate();
+  useNavigate();
   const showCanvas = (xyz, Type) => {
     setType(Type);
     setElement(xyz);
@@ -33,7 +32,7 @@ function ConfigConnectorConsole(props) {
     props.setColor3("#12262e");
     props.setColor4("#12262e");
     props.setColor5("#12262e");
-  }, []);
+  }, [props]);
 
   return (
     <>

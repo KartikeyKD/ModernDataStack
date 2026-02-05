@@ -50,7 +50,7 @@ function ConnectorConsole(props) {
     } else if (localStorage.getItem("name") === "Suraj") {
       setDisplaymon("none");
     }
-  }, []);
+  }, [history, props]);
 
   const filterCards = (card) => {
     const cardTitle = card.props.children[1].props.children;

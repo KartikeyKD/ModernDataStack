@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
 import JdbcConnector from "../connectors/JdbcConnector";
 import ApiConnector from "../connectors/ApiConnector";

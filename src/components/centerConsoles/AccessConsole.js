@@ -9,7 +9,7 @@ function AccessConsole(props) {
     props.setColor3("#12262e");
     props.setColor4("#23434f");
     props.setColor5("#12262e");
-  }, []);
+  }, [props]);
   return (
     <div>
       <h1>Access Control Console</h1>

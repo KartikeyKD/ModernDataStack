@@ -4,14 +4,12 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SideMenu from "./components/elements/SideMenu";
 import ConnectorConsole from "./components/centerConsoles/ConnectorConsole";
-import FilesConnector from "./components/connectors/FilesConnector";
 import LoginPage from "./components/elements/LoginPage";
 import ConfigConnectorConsole from "./components/centerConsoles/ConfigConnectorConsole";
 import DatabricksConsole from "./components/centerConsoles/DatabricksConsole";
 import AccessConsole from "./components/centerConsoles/AccessConsole";
 import InfrastructureConsole from "./components/centerConsoles/InfrastructureConsole";
 import LoadingBar from "react-top-loading-bar";
-import Alert from "./components/elements/Alert";
 import DataIngestion from "./components/centerConsoles/DataIngestion";
 import NotFound from "./components/NotFound";
 
@@ -26,7 +24,7 @@ function App() {
   const [key, setKey] = useState();
   const [userName, setUserName] = useState("");
   const [utype, setUType] = useState("");
-  const [adminControl, setAdminControl] = useState("");
+  const [adminControl] = useState("");
   let [progress, setProgress] = useState(0);
   const infra = () => {
     setColor1("#12262e");

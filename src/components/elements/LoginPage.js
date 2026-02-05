@@ -8,7 +8,7 @@ const LoginPage = (props) => {
   useEffect(() => {
     props.setside("none");
     props.setNav("none");
-  }, []);
+  }, [props]);
 
   const handleSubmit = async (e) => {
     props.setProgress(10);

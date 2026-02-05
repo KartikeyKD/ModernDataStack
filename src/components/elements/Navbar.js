@@ -1,8 +1,7 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Navbar(props) {
-  let location = useLocation();
   let history = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -47,19 +46,19 @@ function Navbar(props) {
           </button>
           <ul className="dropdown-menu dropdown-menu-end">
             <li>
-              <a className="dropdown-item" href="#">
+              <button className="dropdown-item">
                 Update Config
-              </a>
+              </button>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <button className="dropdown-item">
                 Upload Config
-              </a>
+              </button>
             </li>
             <li onClick={handleLogout}>
-              <a className="dropdown-item" href="#">
+              <button className="dropdown-item">
                 Log Out
-              </a>
+              </button>
             </li>
           </ul>
         </div>

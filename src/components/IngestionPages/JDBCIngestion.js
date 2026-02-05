@@ -6,7 +6,6 @@ const JDBCIngestion = (props) => {
   const [dbType, setDbType] = useState("");
   const [dbSelected, setDbSelected] = useState("");
   const [jdbcUrl, setJdbcUrl] = useState("");
-  const [load, setLoad] = useState("");
   const [dbCredentials, setDbCredentials] = useState({
     connectorName: "",
     port: "",
@@ -16,10 +15,6 @@ const JDBCIngestion = (props) => {
     srcDb: "",
     srcTable: "",
   });
-  
-
-  const [disabled, setDisabled] = useState(false);
-  const [editButton, setEditButton] = useState("none");
 
   const onChange = (e) => {
     setDbCredentials({ ...dbCredentials, [e.target.id]: e.target.value });
@@ -27,11 +22,10 @@ const JDBCIngestion = (props) => {
   useEffect(() => {
     // Fetch connectors when the component mounts
     getConnectors();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dbType]);
 
   const handleEdit = async (connectorName) => {
-    setEditButton("block");
-    setDisabled(true);
     const response = await fetch("/getConnectorDetails", {
       method: "POST",
       headers: {
@@ -260,43 +254,8 @@ export default JDBCIngestion;
 
 
 
- {/* <nav className="loadtab pt-2">
-          <ul className="nav" style={{ cursor: "pointer" }}>
-            <li
-              className={`nav-item mx-2 ${
-                load === "full" ? "loadtabactive" : "loadtab"
-              }`}
-              onClick={() => setLoad("full")}
-            >
-              Full Load
-            </li>
-            <li
-              className={`nav-item mx-2 ${
-                load === "incremental" ? "loadtabactive" : "loadtab"
-              }`}
-              onClick={() => setLoad("incremental")}
-            >
-              Incremental Load
-            </li>
-            <li
-              className={`nav-item mx-2 ${
-                load === "chunck" ? "loadtabactive" : "loadtab"
-              }`}
-              onClick={() => setLoad("chunck")}
-            >
-              Chunck Load
-            </li>
-          </ul>
-        </nav> */}
 
 
- {/* {(() => {
-          if (load === "full") {
-            return <FullLoad />;
-          } else if (load === "incremental") {
-            return <IncrementalLoad />;
-          } else if (load === "chunck") {
-            return <ChunckLoad />;
-          }
-        })()} */}
+
+
 

@@ -28,19 +28,19 @@ const FilesIngestion = (props) => {
           </button>
           <ul className="dropdown-menu">
             <li>
-              <a className="dropdown-item" href="#">
+              <button className="dropdown-item">
                 CSV
-              </a>
+              </button>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <button className="dropdown-item">
                 Another action
-              </a>
+              </button>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
+              <button className="dropdown-item">
                 Something else here
-              </a>
+              </button>
             </li>
           </ul>
         </div>

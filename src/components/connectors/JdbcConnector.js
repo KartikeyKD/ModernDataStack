@@ -45,7 +45,8 @@ function JdbcConnector(props) {
   useEffect(() => {
     // Fetch connectors when the component mounts
     getConnectors();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.dbtype]);
 
   const showAlert = (message, type) => {
     setAlert({
@@ -102,6 +103,7 @@ function JdbcConnector(props) {
         }),
       });
       props.setProgress(50);
+      // eslint-disable-next-line no-unused-vars
       const saved = await response.json();
       props.setProgress(70);
       if (response.status === 200) {
@@ -139,6 +141,7 @@ function JdbcConnector(props) {
       }),
     });
     props.setProgress(50);
+    // eslint-disable-next-line no-unused-vars
     const json = await response.json();
     props.setProgress(70);
     if (response.status === 200) {

@@ -9,7 +9,7 @@ function DatabricksConsole(props) {
     props.setColor3("#23434f");
     props.setColor4("#12262e");
     props.setColor5("#12262e");
-  }, []);
+  }, [props]);
 
   return (
     <div>

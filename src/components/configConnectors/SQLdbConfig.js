@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Alert } from "react-bootstrap";
 
 function SQLdbConfig(props) {
   const [isSwitchChecked, setIsSwitchChecked] = useState(false);
@@ -44,7 +43,8 @@ function SQLdbConfig(props) {
   useEffect(() => {
     // Fetch connectors when the component mounts
     getConnectors();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.dbType]);
 
   const showAlert = (message, type) => {
     setAlert({
@@ -100,6 +100,7 @@ function SQLdbConfig(props) {
       }),
     });
     props.setProgress(50);
+    // eslint-disable-next-line no-unused-vars
     const saved = await response.json();
     props.setProgress(70);
     if (response.status === 200) {
@@ -134,6 +135,7 @@ function SQLdbConfig(props) {
       }),
     });
     props.setProgress(50);
+    // eslint-disable-next-line no-unused-vars
     const json = await response.json();
     props.setProgress(70);
     if (response.status === 200) {

@@ -67,7 +67,7 @@ const NotFound = () => {
             </div>
           </div>
           <div className="imagenotfound">
-            <img src="404.png" className="imagenotfound" />
+            <img src="404.png" alt="404 Not Found" className="imagenotfound" />
             <div className="nottext">404</div>
           </div>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import JDBCIngestion from "../IngestionPages/JDBCIngestion";
 import ApiIngestion from "../IngestionPages/ApiIngestion";
 import FilesIngestion from "../IngestionPages/FilesIngestion";
@@ -44,11 +44,7 @@ const DataIngestion = (props) => {
     props.setColor3("#12262e");
     props.setColor4("#12262e");
     props.setColor5("#12262e");
-  }, []);
-
-  const toggleClick = (item) => {
-    setItem(item);
-  };
+  }, [history, props]);
   const handleAddInputBox = () => {
     setInputBoxes([...inputBoxes, ""]);
   };
